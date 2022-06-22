@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3 grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="title">css3 grid 정리</h1>
+        <!-- 1 -->
+        <section id="contents01" class="contents">
+            <h2 class="contents__title">#grid default</h2>
+            <div class="grid grid--default">
+                <div class="grid__item">1</div>
+                <div class="grid__item">2</div>
+                <div class="grid__item">3</div>
+                <div class="grid__item">4</div>
+                <div class="grid__item">5</div>
+                <div class="grid__item">6</div>
+                <div class="grid__item">7</div>
+                <div class="grid__item">8</div>
+                <div class="grid__item">9</div>
+                <div class="grid__item">10</div>
+                <div class="grid__item">11</div>
+            </div>
+            <p class="description">
+                grid-template-columns: 100px auto 200px; <br>
+                grid-template-rows: 100px 100px 200px auto; <br>
+                grid-gap: 10px;
+            </p>
+        </section>
+        <!-- // -->
+        <!-- 2 -->
+        <section id="contents02" class="contents">
+            <h2 class="contents__title">#grid auto</h2>
+            <div class="grid grid--autorow">
+                <div class="grid__item">1</div>
+                <div class="grid__item">2</div>
+                <div class="grid__item">3</div>
+                <div class="grid__item">4</div>
+                <div class="grid__item">5</div>
+                <div class="grid__item">6</div>
+                <div class="grid__item">7</div>
+                <div class="grid__item">8</div>
+                <div class="grid__item">9</div>
+                <div class="grid__item">10</div>
+                <div class="grid__item">11</div>
+            </div>
+            <p class="description">
+                grid-auto-flow: row; <br>
+                grid-gap: 10px; <br>
+                grid-auto-columns: 150px;
+            </p>
+
+            <div class="grid grid--autocol">
+                <div class="grid__item">1</div>
+                <div class="grid__item">2</div>
+                <div class="grid__item">3</div>
+                <div class="grid__item">4</div>
+                <div class="grid__item">5</div>
+                <div class="grid__item">6</div>
+                <div class="grid__item">7</div>
+                <div class="grid__item">8</div>
+                <div class="grid__item">9</div>
+                <div class="grid__item">10</div>
+                <div class="grid__item">11</div>
+            </div>
+            <p class="description">
+                grid-auto-flow: column; <br>
+                grid-gap: 10px; <br>
+                grid-auto-rows: 200px;
+            </p>
+        </section>
+        <!-- // -->
+        <!-- 3 -->
+        <section id="contents03" class="contents">
+            <h2 class="contents__title">#grid fr</h2>
+            <div class="grid grid--fraction">
+                <div class="grid__item">1</div>
+                <div class="grid__item">2</div>
+                <div class="grid__item">3</div>
+                <div class="grid__item">4</div>
+                <div class="grid__item">5</div>
+                <div class="grid__item">6</div>
+                <div class="grid__item">7</div>
+                <div class="grid__item">8</div>
+                <div class="grid__item">9</div>
+                <div class="grid__item">10</div>
+                <div class="grid__item">11</div>
+            </div>
+            <p class="description">
+                grid-gap: 10px; <br>
+                grid-template-columns: auto 1fr 0.5fr; <br>
+                grid-template-rows: 100px 150px auto 1fr; <br>
+                <br>
+                <strong>fraction</strong> <br>
+                다른 영역이 px로 고정되면 나머지 영역이 auto <br>
+                다른 영역이 fr단위고 auto면 auto는 내용 부분만 차지함
+            </p>
+        </section>
+        <!-- // -->
+    </div>
+</body>
+</html>
