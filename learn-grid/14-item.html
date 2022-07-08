@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-place</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        .container  {width: 80%; margin: 25px auto; border: 5px dashed black; background-color: rgba(60, 179, 114, 0.301);}
+        .box {border: 3px solid cornsilk; background-color: crimson; font: bold 24px arial,sans-serif; text-align: center;}
+
+        /* grid */
+        .container {
+            height: 600px;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, auto);
+        }
+        .box:nth-child(3) {
+            /* align-self: center; */
+            /* start | center | end | stretch(default 값) */
+            /* justify-self: center; */
+            /* start | center | end | stretch(default 값) */
+
+            place-self: stretch stretch;
+            /* align-self  justify-self */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+    </div>
+</body>
+</html>

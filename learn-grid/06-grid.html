@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-span</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            margin: 25px auto;
+            border: 5px dashed black;
+            background-color: lavenderblush;
+
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+        .item {
+            border: 3px solid brown;
+            background-color: lavender;
+            font: bold 30px arial, sans-serif;
+            text-align: center;
+        }
+        .item:nth-child(4) {
+            /* grid-row: 2 / -1;  */
+            /* 1~-1까지 즉, 처음부터 내가 지정한 높이(grid-template-rows)의 끝(-1)까지! */
+            /* row 1 ~ 3번까지 합친다. row숫자는 item 숫자가 아니고 grid 숫자!*/
+            /* grid-column: 2 / 4; */
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+    </div>
+</body>
+</html>

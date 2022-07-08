@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-place</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        .container  {width: 80%; margin: 25px auto; border: 5px dashed black; background-color: rgba(60, 179, 114, 0.301);}
+        .box {border: 3px solid cornsilk; background-color: crimson; font: bold 24px arial,sans-serif; text-align: center;}
+
+        /* grid */
+        .container {
+            display: grid;
+            grid-gap: 10px;
+            /* grid-template-columns: repeat(auto-fit, 150px); */
+            grid-template-columns: repeat(auto-fill, 150px);
+        }
+        .box:last-child {
+            grid-column-end: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+</body>
+</html>

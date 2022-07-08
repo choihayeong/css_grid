@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-span</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            margin: 25px auto;
+            border: 5px dashed black;
+            background-color: lavenderblush;
+
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .item {
+            border: 3px solid brown;
+            background-color: lavender;
+            font: bold 30px arial, sans-serif;
+            text-align: center;
+        }
+        .item:nth-child(3) {
+            border-color: cornsilk;
+            background-color: chartreuse;
+            /* grid-column: span 3; */
+            /* 합친 정도의 크기 3, 4, 5를 합친다는 의미가 아님. */
+            grid-row: span 8;
+            /* 보이는건 5줄만 보여도 8줄 합쳐진 상태임. */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+    </div>
+</body>
+</html>

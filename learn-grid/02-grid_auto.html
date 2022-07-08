@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            margin: 25px auto;
+            border: 5px dashed black;
+            background-color: lavenderblush;
+
+            display: grid;
+            /* grid-template-columns: auto auto auto; */
+            /* grid-auto-rows: 150px; */
+            /* grid-auto-flow: column; */
+            grid-auto-flow: row;
+            grid-auto-columns: 150px;
+            grid-gap: 10px;
+            
+        }
+        .item {
+            margin: 10px;
+            border: 3px solid brown;
+            background-color: lavender;
+            font: bold 30px arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+    </div>
+</body>
+</html>

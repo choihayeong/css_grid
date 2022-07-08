@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-area</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        .container  {width: 80%; margin: 25px auto; border: 5px dashed black; background-color: rgba(60, 179, 114, 0.301);}
+        .box {border: 3px solid cornsilk; background-color: crimson; font: bold 16px arial,sans-serif; text-align: center;}
+
+        /* grid */
+        .container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: 150px 250px 100px;
+            grid-template-areas: 
+                "sidebar1 sidebar1 sidebar2"
+                "content content sidebar2"
+                "footer footer footer";
+                /* "sidebar1 content sidebar2"
+                "sidebar1 content content"
+                "footer footer footer" */
+                /* 위에처럼 content ㄴ자로 합쳐지는 건 안됨. */
+        }
+        /* gird-area: sidebar1; - 이름 지정 */
+        .box1 {grid-area: sidebar1;}
+        .box2 {grid-area: content;}
+        .box3 {grid-area: sidebar2;}
+        .box4 {grid-area: footer;}
+
+        @media screen and (max-width: 800px) {
+            .container{
+                grid-template-areas: 
+                "sidebar1 sidebar1 sidebar1"
+                "content content content"
+                "sidebar2 footer footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <p>sidebar 1</p>
+        </div>
+        <div class="box box2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cupiditate veniam corrupti tenetur ut magnam nihil accusantium temporibus! Ducimus sapiente quaerat tempora repellendus corporis quos doloremque magni est sed eaque.</p>
+        </div>
+        <div class="box box3">
+            <p>sidebar 2</p>
+        </div>
+        <div class="box box4">
+            <p>footer</p>
+        </div>
+    </div>
+</body>
+</html>

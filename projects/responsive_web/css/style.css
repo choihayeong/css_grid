@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* reset */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+html {--colorYellow: #fcfc88; --textColor: #000; font: 10px 'Trebuchet MS', AppleGhotic, sans-serif;}
+body {
+    margin: 50px; 
+    min-height: calc(100vh - 100px); 
+    background: linear-gradient(110deg, #a7bbf3, #6fff8ed0); font-size: 1.4rem;
+}
+li {list-style: none;}
+img {max-width: 100%;}
+button {
+    padding: 1rem 2rem;
+    background-color: var(--colorYellow);
+    border: 0;
+}
+.wrap {
+    display: grid;
+    grid-gap: 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* top */
+.top {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        "head head cta1"
+        "head head cta2";
+}
+.top header {
+    grid-area: head; 
+    min-height: 400px; 
+    padding: 50px; 
+    background: url(https://source.unsplash.com/random/800x400) no-repeat 50% 100% / cover; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start;
+}
+.top header > * {
+    background: var(--colorYellow); 
+    padding: 5px; 
+    margin: 10px 0;
+    font-weight: bold;
+}
+.top header h1 {
+    margin-bottom: 1rem; 
+    padding: 0.5rem; 
+}
+.top .cta {
+    background: var(--colorYellow); 
+    display: grid;
+    justify-content: center; /* 이거 안쓰면 stretch 상태 */
+    align-content: center;
+    font-weight: bold;
+    text-align: center;
+}
+.top .cta .price {font-size: 6rem; font-weight: 300;}
+.top .cta1 {grid-area: cta1;}
+.top .cta2 {grid-area: cta2;}
+
+/* menu */
+button[aria-controls = 'menu-list'] {display: none;}
+.menu .menu-list {
+    display: grid;
+    grid-gap: 10px;
+    /* auto-fill은 감싸는 영역 끝쪽에 맞춰지는 것 */
+    /* auto-fit은 내용에 맞춰서 */
+    /* minmax 최소 100px보다 작아지지 않으면서 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.menu .menu-list li a {
+    display: block;
+    padding: 10px;
+    background: var(--colorYellow);
+    text-align: center;
+    color: var(--textColor);
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* features */
+.features {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.features .features_item {
+    padding: 10px 10px 15px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+.features .features_item .icon {
+    display: block;
+    font-size: 5rem;
+}
+.features .features_item h3 {
+    margin: 10px;
+}
+.features .features_item p {color: rgba(0,0,0,0.6);}
+
+/* about */
+.about {
+    padding: 50px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 400px 1fr;
+    background-color: #fff;
+    align-items: center;
+}
+.about .about_desc {color:var(--textColor);}
+.about .about_desc h2 {margin: 10px 0;}
+.about .about_desc p {line-height: 1.6;}
+.about .about_desc a {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: var(--colorYellow);
+    color: var(--textColor);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* gallery */
+.gallery {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.gallery h2 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr auto 1fr;
+    text-align: center;
+    align-items: center;
+}
+.gallery h2::before,
+.gallery h2::after {
+    display: block;
+    content: '';
+    height: 6px;
+    background: linear-gradient(to var(--direction, left), var(--colorYellow), transparent);
+}
+.gallery h2::after {
+    --direction: right;
+}
+.gallery img {
+    width: 100%;
+}

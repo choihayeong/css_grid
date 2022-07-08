@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            height: 100vh;
+            margin: 25px auto;
+            border: 5px dashed black;
+            background-color: lavenderblush;
+
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1.5fr 1fr auto;
+            /* fraction */
+            /* grid-template-columns: 150px 100px auto;  */
+            /* 다른 영역이 px로 고정되면 나머지 영역이 auto */
+            /* 다른 영역이 fr단위고 auto면 auto는 내용 부분만 차지함 */
+            grid-template-rows: 100px 100px auto 1fr;
+        }
+        .item {
+            border: 3px solid brown;
+            background-color: lavender;
+            font: bold 30px arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+    </div>
+</body>
+</html>
